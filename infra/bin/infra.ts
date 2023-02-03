@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /* eslint-disable no-new */
 import 'source-map-support/register';
-import * as cdk from '@aws-cdk/core';
+import * as cdk from 'aws-cdk-lib/core';
 import { PortfolioWebsitePipelineStack } from '../lib/pipeline-stack';
 
 const env: cdk.Environment = { account: '806124867804', region: 'ap-southeast-1' };

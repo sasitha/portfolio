@@ -1,9 +1,6 @@
 import { Stack, StackProps, } from 'aws-cdk-lib/core';
 import { Construct } from 'constructs';
-import { Artifact } from 'aws-cdk-lib/aws-codepipeline';
-import { CdkPipeline, SimpleSynthAction } from 'aws-cdk-lib/pipelines';
-import { Repository } from 'aws-cdk-lib/aws-codecommit';
-import { CodeCommitSourceAction } from 'aws-cdk-lib/aws-codepipeline-actions';
+import * as pipelines from "aws-cdk-lib/pipelines";
 
 import { PortfolioWebsiteAppStage } from './app-stage';
 
@@ -17,38 +14,47 @@ export class PortfolioWebsitePipelineStack extends Stack {
   constructor(scope: Construct, id: string, props: PortfolioWebsitePipelineStackProps) {
     super(scope, id, props);
 
-    const sourceArtifact = new Artifact();
-    const cloudAssemblyArtifact = new Artifact();
+    const pipeline = new pipelines.CodePipeline(this, "PortfolioWebsitePipeline", {
+      pipelineName: "PortfolioWebsitePipeline",
+      selfMutation: false,
+      dockerEnabledForSynth: true,
+      synth: new pipelines.ShellStep('Synth', {
+        input: pipelines.CodePipelineSource.connection("sasitha/portfolio", 'master', {
+          connectionArn: "arn:aws:codestar-connections:ap-southeast-1:806124867804:connection/aa3548ab-ef5c-4911-9c31-5ba81b8613d5"
+        }),
+        commands: [
+          "yarn",
+          "npm install --prefix infra",
+          "yarn build",
+          "cd infra && npx cdk synth"
+        ],
+        primaryOutputDirectory: "infra/cdk.out"
+      })
+    })
 
-    const repository = Repository.fromRepositoryName(
-      this,
-      'PortfolioWebsiteRepository',
-      props.repositoryName
-    );
+    // const pipeline = new CdkPipeline(this, `PortfolioWebsitePipeline`, {
+    //   pipelineName: `PortfolioWebsitePipeline`,
+    //   cloudAssemblyArtifact,
+    //   sourceAction: new CodeCommitSourceAction({
+    //     actionName: 'CodeCommit',
+    //     branch: props.branchName,
+    //     repository,
+    //     output: sourceArtifact,
+    //   }),
+    //   synthAction: new SimpleSynthAction({
+    //     sourceArtifact,
+    //     cloudAssemblyArtifact,
+    //     subdirectory: 'infra',
+    //     synthCommand: 'cd infra && npx cdk synth',
+    //     installCommands: ['cd ..', 'npm install', 'npm install --prefix infra'],
+    //     buildCommands: [`npm run build`],
+    //     environment: {
+    //       privileged: true,
+    //     },
+    //   }),
+    // });
 
-    const pipeline = new CdkPipeline(this, `PortfolioWebsitePipeline`, {
-      pipelineName: `PortfolioWebsitePipeline`,
-      cloudAssemblyArtifact,
-      sourceAction: new CodeCommitSourceAction({
-        actionName: 'CodeCommit',
-        branch: props.branchName,
-        repository,
-        output: sourceArtifact,
-      }),
-      synthAction: new SimpleSynthAction({
-        sourceArtifact,
-        cloudAssemblyArtifact,
-        subdirectory: 'infra',
-        synthCommand: 'cd infra && npx cdk synth',
-        installCommands: ['cd ..', 'npm install', 'npm install --prefix infra'],
-        buildCommands: [`npm run build`],
-        environment: {
-          privileged: true,
-        },
-      }),
-    });
-
-    pipeline.addApplicationStage(
+    pipeline.addStage(
       new PortfolioWebsiteAppStage(this, `PortfolioWebsiteApp`, {
         env: props.env,
         domainName: props.domainName,
