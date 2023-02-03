@@ -71,7 +71,40 @@ const Home: NextPage = () => {
             </div>
             <div className='text-left'>
               <h1 className='text-xl font-bold uppercase'>Connect With Me</h1>
+              <p className='text-base font-medium pt-2'>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui ligula, malesuada vel convallis in, tincidunt ut mi. Vestibulum sit amet urna placerat, tempor soloa demanium testi lor Aliq lorem vitae semper tempor.
+              </p>
             </div>
+          </div>
+        </section>
+        <section className='pt-8'>
+          <div className='w-full items-center justify-center pb-8'>
+            <h1 className='text-xl font-bold uppercase'>Featured Projects</h1>
+          </div>
+          <div className='grid grid-cols-3 gap-4'>
+            <div className='items-center justify-center'>
+              <h2>P1</h2>
+            </div>
+            <div className='items-center justify-center'>
+              <h2>P2</h2>
+            </div>
+            <div className='items-center justify-center'>
+              <h2>P3</h2>
+            </div>
+            <div className='items-center justify-center'>
+              <h2>P4</h2>
+            </div>
+            <div className='items-center justify-center'>
+              <h2>P5</h2>
+            </div>
+            <div className='items-center justify-center'>
+              <h2>P6</h2>
+            </div>
+          </div>
+          <div className='w-full flex items-center justify-center pt-8'>
+            <button className='flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-indigo-700 '>
+              View More
+            </button>
           </div>
         </section>
       </main>
