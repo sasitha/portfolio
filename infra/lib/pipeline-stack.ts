@@ -16,8 +16,9 @@ export class PortfolioWebsitePipelineStack extends Stack {
 
     const pipeline = new pipelines.CodePipeline(this, "PortfolioWebsitePipeline", {
       pipelineName: "PortfolioWebsitePipeline",
-      selfMutation: false,
+      selfMutation: true,
       dockerEnabledForSynth: true,
+      dockerEnabledForSelfMutation: true,
       synth: new pipelines.ShellStep('Synth', {
         input: pipelines.CodePipelineSource.connection("sasitha/portfolio", 'master', {
           connectionArn: "arn:aws:codestar-connections:ap-southeast-1:806124867804:connection/aa3548ab-ef5c-4911-9c31-5ba81b8613d5"
@@ -28,7 +29,8 @@ export class PortfolioWebsitePipelineStack extends Stack {
           "yarn ",
           "cd ..",
           "yarn build",
-          "cd infra && npx cdk synth"
+          "cd infra",
+          "npx cdk synth"
         ],
         primaryOutputDirectory: "infra/cdk.out"
       })

@@ -64,7 +64,7 @@ const Home: NextPage = () => {
                 Feel free to download my resume from the below link. You can also read through the project I have listed below to get an insight into the work I have done.
               </p>
               <div className='pt-4 '>
-                <button className='flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-indigo-700 '>
+                <button className='flex items-center justify-center rounded-md border border-transparent bg-bramble-700 px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-indigo-700 '>
                   View Projects
                 </button>
               </div>

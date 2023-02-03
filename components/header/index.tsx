@@ -114,7 +114,7 @@ export const Header = () => {
 
                         <a
                             href="#"
-                            className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-1 text-sm font-bold text-white shadow-sm hover:bg-indigo-700"
+                            className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-bramble-700 px-4 py-1 text-sm font-bold text-white shadow-sm hover:bg-indigo-700"
                         >
                             Download CV
                         </a>
@@ -163,7 +163,7 @@ export const Header = () => {
                             <div>
                                 <a
                                     href="#"
-                                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-indigo-700"
+                                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-bramble-700 px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-indigo-700"
                                 >
                                     Download CV
                                 </a>
