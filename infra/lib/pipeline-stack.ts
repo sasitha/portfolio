@@ -20,7 +20,7 @@ export class PortfolioWebsitePipelineStack extends Stack {
       dockerEnabledForSynth: true,
       dockerEnabledForSelfMutation: true,
       synth: new pipelines.ShellStep('Synth', {
-        input: pipelines.CodePipelineSource.connection("sasitha/portfolio", 'master', {
+        input: pipelines.CodePipelineSource.connection("sasitha/portfolio", 'main', {
           connectionArn: "arn:aws:codestar-connections:ap-southeast-1:806124867804:connection/aa3548ab-ef5c-4911-9c31-5ba81b8613d5"
         }),
         commands: [
