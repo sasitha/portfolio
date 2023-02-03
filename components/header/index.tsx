@@ -105,7 +105,7 @@ export const Header = () => {
                     </div>
                     <div className="hidden lg:flex lg:gap-x-12">
                         {navigation.map((item) => (
-                            <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+                            <a key={item.name} href={item.href} className="text-md font-bold leading-6 text-plum-900">
                                 {item.name}
                             </a>
                         ))}
@@ -114,7 +114,7 @@ export const Header = () => {
 
                         <a
                             href="#"
-                            className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-bramble-700 px-4 py-1 text-sm font-bold text-white shadow-sm hover:bg-indigo-700"
+                            className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-bramble-700 px-4 py-1 text-sm font-bold text-white shadow-sm hover:bg-bramble-900"
                         >
                             Download CV
                         </a>
