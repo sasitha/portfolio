@@ -11,5 +11,5 @@ new PortfolioWebsitePipelineStack(app, 'PortfolioWebsite', {
   env,
   repositoryName: 'portfolio-sasitha',
   branchName: 'master',
-  domainName: 'sasitha.me',
+  domainName: 'sasitha.xyz',
 });

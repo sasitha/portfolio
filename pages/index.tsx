@@ -46,9 +46,33 @@ const Home: NextPage = () => {
       <div>
         <Header />
       </div>
-      <main className="w-full items-center justify-center px-20 text-center">
+      <main className="w-full items-center justify-center px-20 text-center mb-20">
         <section>
           <Hero />
+        </section>
+        <section>
+          <div className='grid grid-cols-2 gap-8'>
+            <div className='text-left pr-2'>
+              <h1 className='text-xl font-bold uppercase'>About me</h1>
+              <p className='text-base font-medium pt-2 '>
+                I see myself as a person who is driven and passionate about software engineering. I believe in self-disciplined individuals and a collaborative working environment to achieve the highest quality software products.
+              </p>
+              <p className='text-base font-medium pt-2'>
+                I graduated from the Faculty of Engineering, the University of Peradeniya, Sri Lanka, with a Software Engineering major. I have been working in the software industry from 2014 onwards.
+              </p>
+              <p className='text-base font-medium pt-2'>
+                Feel free to download my resume from the below link. You can also read through the project I have listed below to get an insight into the work I have done.
+              </p>
+              <div className='pt-4 '>
+                <button className='flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-indigo-700 '>
+                  View Projects
+                </button>
+              </div>
+            </div>
+            <div className='text-left'>
+              <h1 className='text-xl font-bold uppercase'>Connect With Me</h1>
+            </div>
+          </div>
         </section>
       </main>
     </>
