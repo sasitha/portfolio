@@ -1,4 +1,4 @@
-import { Stage, StageProps } from 'aws-cdk-lib/core';
+import { Stage, StageProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs'
 import { PortfolioWebsiteStack } from './infra-stack';
 

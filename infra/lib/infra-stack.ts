@@ -1,5 +1,5 @@
 /* eslint-disable no-new */
-import * as cdk from 'aws-cdk-lib/core';
+import * as cdk from 'aws-cdk-lib';
 import { PortfolioWebsite } from './construct/static-site';
 import { Construct } from 'constructs'
 export interface PortfolioWebsiteStackProps extends cdk.StackProps {

@@ -1,4 +1,4 @@
-import { Stack, StackProps, } from 'aws-cdk-lib/core';
+import { Stack, StackProps, } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import * as pipelines from "aws-cdk-lib/pipelines";
 
@@ -24,7 +24,9 @@ export class PortfolioWebsitePipelineStack extends Stack {
         }),
         commands: [
           "yarn",
-          "npm install --prefix infra",
+          "cd infra",
+          "yarn ",
+          "cd ..",
           "yarn build",
           "cd infra && npx cdk synth"
         ],

@@ -1,5 +1,5 @@
 /* eslint-disable no-new */
-import { RemovalPolicy } from 'aws-cdk-lib/core';
+import { RemovalPolicy } from 'aws-cdk-lib';
 import { Bucket, BlockPublicAccess } from 'aws-cdk-lib/aws-s3';
 import { CloudFrontWebDistribution, OriginAccessIdentity } from 'aws-cdk-lib/aws-cloudfront';
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment';
