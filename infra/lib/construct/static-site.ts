@@ -24,7 +24,7 @@ export class PortfolioWebsite extends Construct {
     //   domainName: siteDomain,
     //   region: 'us-east-1', // Cloudfront only checks this region for certificates.
     // });
-    const certificate = Certificate.fromCertificateArn(this, "PortfolioWebsiteCertificate", "arn:aws:acm:us-east-1:806124867804:certificate/544938e3-d1c8-4217-8473-b19facf06960")
+    const certificate = Certificate.fromCertificateArn(this, "PortfolioWebsiteCertificate", "arn:aws:acm:us-east-1:806124867804:certificate/506a28c7-47ea-4c08-96b2-4f2cbf34d003")
     const siteBucket = new Bucket(this, 'PortfolioWebsiteBucket', {
       websiteIndexDocument: 'index.html',
       websiteErrorDocument: 'error.html',

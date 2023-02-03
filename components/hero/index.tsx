@@ -13,7 +13,7 @@ export const Hero = () => {
                         Sasitha Madushanka
                     </h1>
                     <h1 className="text-1xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-                        Full Stack Developer
+                        A Full Stack Developer
                     </h1>
                     <div className="mt-10 flex items-center justify-center gap-x-6">
                         <a
