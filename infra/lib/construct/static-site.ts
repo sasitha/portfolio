@@ -3,7 +3,7 @@ import { RemovalPolicy } from 'aws-cdk-lib';
 import { Bucket, BlockPublicAccess } from 'aws-cdk-lib/aws-s3';
 import { CloudFrontWebDistribution, OriginAccessIdentity } from 'aws-cdk-lib/aws-cloudfront';
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment';
-import { DnsValidatedCertificate } from 'aws-cdk-lib/aws-certificatemanager';
+import { Certificate, DnsValidatedCertificate } from 'aws-cdk-lib/aws-certificatemanager';
 import { ARecord, HostedZone, RecordTarget } from 'aws-cdk-lib/aws-route53';
 import { CloudFrontTarget } from 'aws-cdk-lib/aws-route53-targets';
 import { Construct } from 'constructs'
@@ -19,11 +19,12 @@ export class PortfolioWebsite extends Construct {
     const hostedZone = HostedZone.fromLookup(this, 'PortfolioWebsiteHostedZone', {
       domainName: props.domainName,
     });
-    const certificate = new DnsValidatedCertificate(this, 'PortfolioWebsiteCertificate', {
-      hostedZone,
-      domainName: siteDomain,
-      region: 'us-east-1', // Cloudfront only checks this region for certificates.
-    });
+    // const certificate = new DnsValidatedCertificate(this, 'PortfolioWebsiteCertificate', {
+    //   hostedZone,
+    //   domainName: siteDomain,
+    //   region: 'us-east-1', // Cloudfront only checks this region for certificates.
+    // });
+    const certificate = Certificate.fromCertificateArn(this, "PortfolioWebsiteCertificate", "arn:aws:acm:us-east-1:806124867804:certificate/544938e3-d1c8-4217-8473-b19facf06960")
     const siteBucket = new Bucket(this, 'PortfolioWebsiteBucket', {
       websiteIndexDocument: 'index.html',
       websiteErrorDocument: 'error.html',
