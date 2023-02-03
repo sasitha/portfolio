@@ -25,7 +25,6 @@ export class PortfolioWebsite extends Construct {
       region: 'us-east-1', // Cloudfront only checks this region for certificates.
     });
     const siteBucket = new Bucket(this, 'PortfolioWebsiteBucket', {
-      bucketName: `${siteDomain}`,
       websiteIndexDocument: 'index.html',
       websiteErrorDocument: 'error.html',
       publicReadAccess: false,
