@@ -22,7 +22,7 @@ export const Hero = () => {
                         >
                             Contact Me
                         </a>
-                        <a href="#" className="text-sm lg:text-base font-semibold leading-7 text-gray-900">
+                        <a href="#" className=" text-sm lg:text-base font-semibold leading-7 text-gray-900">
                             Learn More
                         </a>
                     </div>

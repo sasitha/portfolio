@@ -21,9 +21,9 @@ import classNames from "classnames";
 
 export const Header = () => {
     const navigation = [
-        { name: 'Home', href: '#' },
-        { name: 'Projects', href: '#' },
-        { name: 'Blog', href: '#' },
+        { name: 'Home', href: '/' },
+        { name: 'Projects', href: '/projects' },
+        { name: 'Blog', href: '/' },
     ]
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const solutions = [
