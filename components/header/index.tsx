@@ -18,6 +18,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import classNames from "classnames";
+import Link from "next/link";
 
 export const Header = () => {
     const navigation = [
@@ -88,7 +89,7 @@ export const Header = () => {
             <div className="w-full px-6 fixed bg-white">
                 <div className="flex items-center justify-between  py-3 md:justify-start md:space-x-10">
                     <div className="flex justify-start lg:w-0 lg:flex-1">
-                        <a href="#">
+                        <a href="/">
                             <span className="sr-only">Your Company</span>
                             <img
                                 className="h-8 w-auto sm:h-10"
@@ -105,16 +106,17 @@ export const Header = () => {
                     </div>
                     <div className="hidden lg:flex lg:gap-x-12">
                         {navigation.map((item) => (
-                            <a key={item.name} href={item.href} className="text-md font-bold leading-6 text-plum-900">
+                            <Link key={item.name} href={item.href} className="text-md font-bold leading-6 text-plum-900">
                                 {item.name}
-                            </a>
+                            </Link>
                         ))}
                     </div>
                     <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
 
                         <a
-                            href="#"
+                            href="/assets/Sasitha_Madushanka.pdf"
                             className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-bramble-700 px-4 py-1 text-sm font-bold text-white shadow-sm hover:bg-bramble-900"
+                            download
                         >
                             Download CV
                         </a>

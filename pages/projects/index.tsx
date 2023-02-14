@@ -1,14 +1,17 @@
 import React from "react";
-import { getAllPosts, getPostByCategory } from "../../lib/api";
+import { getAllPosts } from "../../lib/api";
 import PostType from "../../interfaces/post";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from 'next/router';
+import path, { join } from 'path'
+
 type Props = {
     posts: PostType[]
 }
 export const ProjectsHome = ({ posts }: Props) => {
-    const router = useRouter();
+
+    const imageBaseFolder = join(process.cwd(), '_projects');
+
     return (
         <section>
 
@@ -26,7 +29,14 @@ export const ProjectsHome = ({ posts }: Props) => {
                         posts.map((p: PostType) => {
                             return (
                                 <div className='items-center justify-center flex flex-col' key={p.slug}>
-                                    <h2 className='text-lg font-bold'>{p.title}</h2>
+                                    <h2 className='text-lg font-bold mb-5'>{p.title}</h2>
+                                    <div className="relative w-96 h-96 mb-5">
+                                        <Image src={`${p.cover}`} alt={`${p.title}`} fill
+                                            className="shadow-2xl"
+                                            style={{
+                                                objectFit: 'contain',
+                                            }} />
+                                    </div>
                                     <p className='text-justify pt-2 flex-1'>
                                         {p.excerpt}
                                     </p>

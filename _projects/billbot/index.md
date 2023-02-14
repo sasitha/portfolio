@@ -5,7 +5,7 @@ slug: 'billbot'
 excerpt: This product is intended to deliver a simple, low-cost Utility billing and reporting platform, which can support multiple Retailers.    It aims to reduce manual work required by Retailers to manage their customer and reporting needs, integrating with key external systems, and automating several processes.
 tags: ['React', 'AWS Lambda', 'Node.js', 'DynamoDB', 'AWS', 'PostgreSQL', 'Cypress']
 category: ['featured']
-cover: './bot-01.png'
+cover: '/projects/billbot/bot-01.png'
 ---
 
 This product is intended to deliver a simple, low-cost Utility billing and reporting platform, which can support multiple Retailers. It aims to reduce manual work required by Retailers to manage their customer and reporting needs, integrating with key external systems, and automating several processes.

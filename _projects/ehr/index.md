@@ -1,11 +1,12 @@
 ---
-title: Electronic Health Record Management System - SAAS Application
+title: Electronic Health Record Management System
 date: '2019-05-27'
 slug: 'ehr'
 excerpt: This web application was build to cater to the needs of small and medium auto workshops that enables managing their day-to-day businesses functions such as inventory, customer management, and invoicing.
 tags: ['Angular', 'AWS Lambda', 'Node.js', 'DynamoDB', 'AWS', 'Cypress']
 category: ['featured']
-cover: './ehr-01.png'
+cover: '/projects/ehr/ehr-01.png'
+
 ---
 
 This solution was developed to be a low-cost multi-tenant SAAS application for small and medium scale businesses.

@@ -28,10 +28,6 @@ export function getPostFromFile(file: string, fields: string[] = []) {
     return items
 }
 
-// export function getPostSlugs() {
-//     return fs.readdirSync(postsDirectory)
-// }
-
 export function getPostBySlug(slug: string, fields: string[] = [], directory: string) {
     const postsDirectory = join(process.cwd(), directory)
     const fullPath = join(postsDirectory, `${slug}/index.md`)

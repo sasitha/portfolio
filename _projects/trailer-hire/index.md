@@ -1,11 +1,12 @@
 ---
 title: Trailer Hire Management System
 date: '2019-05-27'
-slug: 'quick-hire'
+slug: 'trailer-hire'
 excerpt: This project was developed for a leading trailer provider that provides short term trailer hiring  to improve their ongoing business that had 300+ hiring locations.
 tags: ['React', 'React Native', 'AWS Lambda', 'Node.js', 'DynamoDB', 'AWS', 'PostgreSQL', 'Cypress']
 category: ['featured']
-cover: './kiosk-01.jpg'
+cover: '/projects/trailer-hire/kiosk-01.jpg'
+
 ---
 
 This Digital Transformation project transformed a New Zeland based trailer rental company to a new generation business operation from its manual bookkeeping process. Project delivered the following outcomes to enable a unique digital transformation experience for all the stakeholders.

@@ -24,7 +24,7 @@ const Home = ({ posts: featuredPosts }: Props) => {
       <section>
         <Hero />
       </section>
-      <section>
+      <section id='about_me' className='pt-10'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
           <div className='text-left pr-2'>
             <h1 className='text-xl font-bold uppercase text-plum-900'>About me</h1>
@@ -51,7 +51,7 @@ const Home = ({ posts: featuredPosts }: Props) => {
           </div>
         </div>
       </section>
-      <section className='pt-8'>
+      <section className='pt-8' id='projects'>
         <div className='w-full items-center justify-center pb-8'>
           <h1 className='text-xl font-bold uppercase text-plum-900'>Featured Projects</h1>
         </div>
@@ -61,6 +61,13 @@ const Home = ({ posts: featuredPosts }: Props) => {
               return (
                 <div className='items-center justify-center flex flex-col' key={p.slug}>
                   <h2 className='text-lg font-bold'>{p.title}</h2>
+                  <div className="relative w-96 h-96 mb-5">
+                    <Image src={`${p.cover}`} alt={`${p.title}`} fill
+                      className="shadow-2xl"
+                      style={{
+                        objectFit: 'contain',
+                      }} />
+                  </div>
                   <p className='text-justify pt-2 flex-1'>
                     {p.excerpt}
                   </p>

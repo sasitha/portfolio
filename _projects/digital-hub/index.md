@@ -1,11 +1,12 @@
 ---
-title: Auto Workshop Management - SaaS Application
+title: Auto Workshop Management System
 date: '2019-05-27'
 slug: 'digital-hub'
 excerpt: This web application was build to cater to the needs of small and medium auto workshops that enables managing their day-to-day businesses functions such as inventory, customer management, and invoicing.
 tags: ['Angular', 'AWS Lambda', 'Node.js', 'DynamoDB', 'AWS', 'Cypress']
 category: ['erp']
-cover: './Lubri-02.jpg'
+cover: '/projects/digital-hub/Lubri-02.jpg'
+
 ---
 
 This solution was developed to be a low-cost multi-tenant SAAS application for small and medium scale businesses.

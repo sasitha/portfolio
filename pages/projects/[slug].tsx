@@ -9,6 +9,7 @@ import { useEffect } from 'react'
 import markdownStyles from '../../styles/markdown-styles.module.css';
 import Link from 'next/link'
 
+import Image from "next/image";
 
 type Props = {
     post: PostType
@@ -27,7 +28,15 @@ export default function Project({ post, morePosts, preview }: Props) {
     return (
         <div className='relative pt-36'>
             <div className='grid grid-cols-3'>
-                <div></div>
+                <div className='relative w-96 h-96 mb-5'>
+                    <Image
+                        src={`${post.cover}`} alt={`${post.title}`} fill
+                        className="shadow-2xl"
+                        style={{
+                            objectFit: 'contain',
+                        }}
+                    />
+                </div>
                 <div className='col-span-2'>
                     <div className='text-left'>
                         <h1 className='text-xl font-bold uppercase text-plum-900'>{post.title}</h1>
@@ -62,7 +71,9 @@ export async function getStaticProps({ params }: Params) {
         'ogImage',
         'coverImage',
         'tags',
+        'cover'
     ], '_projects')
+    console.log('post', post)
     const content = await markdownToHtml(post.content || '')
 
     return {
