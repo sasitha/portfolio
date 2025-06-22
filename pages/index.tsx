@@ -28,14 +28,17 @@ const Home = ({ posts: featuredPosts }: Props) => {
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
           <div className='text-left pr-2'>
             <h1 className='text-xl font-bold uppercase text-plum-900'>About me</h1>
+            <h3 className='text-md font-bol'>
+              I'm a problem solver at heart who thrives on seeing code transform into solutions that real users love.
+            </h3>
             <p className='text-base font-medium pt-2 text-justify '>
-              I see myself as a person who is driven and passionate about software engineering. I believe in self-disciplined individuals and a collaborative working environment to achieve the highest quality software products.
+              With over 10 years of experience as a Technical Lead, I specialize in building scalable cloud solutions that deliver exceptional value. My approach is simple: understand deeply, build thoughtfully, and deliver reliably.
             </p>
             <p className='text-base font-medium pt-2 text-justify'>
-              I graduated from the Faculty of Engineering, the University of Peradeniya, Sri Lanka, with a Software Engineering major. I have been working in the software industry from 2014 onwards.
+              I believe the best software comes from teams that combine technical excellence with genuine collaboration. That's why I'm passionate about mentoring developers – guiding them to discover their own strengths while building systems that matter. Through practices like TDD/BDD, I've helped teams achieve 90% code coverage while delivering features that truly capture user needs.
             </p>
             <p className='text-base font-medium pt-2 text-justify'>
-              Feel free to download my resume from the below link. You can also read through the project I have listed below to get an insight into the work I have done.
+              My proudest achievement? Leading the Trailer Hire project where we delivered a solution for a fraction of the initial estimated cost while dramatically reducing AWS maintenance expenses. This exemplifies my philosophy: elegant solutions don't have to be complicated.
             </p>
             <div className='pt-4 '>
               <Link href={"/projects"} className='flex md:w-2/6 items-center justify-center rounded-md border border-transparent bg-bramble-700 px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-bramble-900 '>
@@ -43,12 +46,12 @@ const Home = ({ posts: featuredPosts }: Props) => {
               </Link>
             </div>
           </div>
-          <div className='text-left'>
+          {/* <div className='text-left'>
             <h1 className='text-xl font-bold uppercase text-plum-900'>Connect With Me</h1>
             <p className='text-base font-medium pt-2 text-justify'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui ligula, malesuada vel convallis in, tincidunt ut mi. Vestibulum sit amet urna placerat, tempor soloa demanium testi lor Aliq lorem vitae semper tempor.
             </p>
-          </div>
+          </div> */}
         </div>
       </section>
       <section className='pt-8' id='projects'>

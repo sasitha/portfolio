@@ -9,6 +9,7 @@ import { CloudFrontTarget } from 'aws-cdk-lib/aws-route53-targets';
 import { Construct } from 'constructs'
 export interface PortfolioWebsiteProps {
   domainName: string;
+  certificateArn: string;
 }
 
 export class PortfolioWebsite extends Construct {
@@ -24,8 +25,9 @@ export class PortfolioWebsite extends Construct {
     //   domainName: siteDomain,
     //   region: 'us-east-1', // Cloudfront only checks this region for certificates.
     // });
-    const certificate = Certificate.fromCertificateArn(this, "PortfolioWebsiteCertificate", "arn:aws:acm:us-east-1:806124867804:certificate/506a28c7-47ea-4c08-96b2-4f2cbf34d003")
+    const certificate = Certificate.fromCertificateArn(this, "PortfolioWebsiteCertificate", props.certificateArn)
     const siteBucket = new Bucket(this, 'PortfolioWebsiteBucket', {
+      bucketName: siteDomain,
       websiteIndexDocument: 'index.html',
       websiteErrorDocument: 'error.html',
       publicReadAccess: false,
@@ -77,13 +79,6 @@ export class PortfolioWebsite extends Construct {
       zone: hostedZone,
       recordName: siteDomain,
       target: RecordTarget.fromAlias(new CloudFrontTarget(distribution)),
-    });
-
-    new BucketDeployment(this, 'DeployWithInvalidation', {
-      sources: [Source.asset('../out')],
-      destinationBucket: siteBucket,
-      distribution,
-      distributionPaths: ['/*'],
     });
   }
 }
