@@ -25,7 +25,7 @@ const Home = ({ posts: featuredPosts }: Props) => {
         <Hero />
       </section>
       <section id='about_me' className='pt-10'>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+        <div className='grid grid-cols-1 gap-8'>
           <div className='text-left pr-2'>
             <h1 className='text-xl font-bold uppercase text-plum-900'>About me</h1>
             <h3 className='text-md font-bol'>
