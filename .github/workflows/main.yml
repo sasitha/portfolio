@@ -42,6 +42,7 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           role-session-name: github-actions-session
+          aws-region: ap-southeast-2
 
       - name: Deploy to S3
         run: |
