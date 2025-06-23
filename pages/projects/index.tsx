@@ -20,7 +20,7 @@ export const ProjectsHome = ({ posts }: Props) => {
                     <div className="text-left">
                         <h1 className="text-xl font-bold uppercase text-plum-900">Projects</h1>
                         <p className='text-base font-medium pt-2 text-justify'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui ligula, malesuada vel convallis in, tincidunt ut mi. Vestibulum sit amet urna placerat, tempor soloa demanium testi lor Aliq lorem vitae semper tempor.
+                          Over the past decade, I've led the development of enterprise-grade solutions that transform how businesses operate. From digitizing manual processes to building scalable cloud platforms, each project represents a unique challenge solved through thoughtful architecture, collaborative leadership, and cutting-edge technology. These featured projects showcase my ability to deliver measurable business value while maintaining technical excellence and cost efficiency.
                         </p>
                     </div>
                 </div>
