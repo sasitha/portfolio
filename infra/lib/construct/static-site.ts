@@ -55,6 +55,12 @@ export class PortfolioWebsite extends Construct {
             cookieBehavior: cloudfront.CacheCookieBehavior.none(),
         });
 
+        const urlRewriteFunction = new cloudfront.Function(this, 'PortfolioWebsiteFunction', {
+            code: cloudfront.FunctionCode.fromFile({filePath: './lib/construct/url_rewrite.js'}),
+            runtime: cloudfront.FunctionRuntime.JS_2_0
+        });
+
+
         const distribution = new cloudfront.Distribution(this, 'PortfolioWebsiteDistribution', {
             defaultBehavior: {
                 origin: origins.S3BucketOrigin.withOriginAccessControl(siteBucket),
@@ -62,13 +68,26 @@ export class PortfolioWebsite extends Construct {
                 allowedMethods: cloudfront.AllowedMethods.ALLOW_GET_HEAD,
                 cachePolicy: htmlCachePolicy,
                 compress: true,
+                functionAssociations: [{
+                    function: urlRewriteFunction,
+                    eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
+                }]
             },
             additionalBehaviors: {
                 '/_astro/*': {
                     origin: origins.S3BucketOrigin.withOriginAccessControl(siteBucket),
                     viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
-                    cachePolicy: staticAssetsCachePolicy
-                }
+                    allowedMethods: cloudfront.AllowedMethods.ALLOW_GET_HEAD,
+                    cachePolicy: staticAssetsCachePolicy,
+                    compress: true,
+                },
+                '/fonts/*': {
+                    origin:  origins.S3BucketOrigin.withOriginAccessControl(siteBucket),
+                    viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+                    allowedMethods: cloudfront.AllowedMethods.ALLOW_GET_HEAD,
+                    cachePolicy: staticAssetsCachePolicy,
+                    compress: true,
+                },
             },
             domainNames: [siteDomain],
             certificate: certificate,
@@ -92,7 +111,8 @@ export class PortfolioWebsite extends Construct {
                     ttl: cdk.Duration.seconds(0),
                 }
             ]
-        })
+        });
+
 
         new r53.ARecord(this, `PortfolioWebsiteARecord`, {
             zone: hostedZone,
