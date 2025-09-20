@@ -14,6 +14,8 @@ const { seo } = Astro.props;
 const image = await getImage({ src: seo?.image || defaultSeo.image, format: 'jpg'});
 const seoImage = generateAbsoluteUrl(image.src);
 ---
+
+
 <head>
   <meta charset="utf-8" />
   <link rel="sitemap" href="/sitemap-index.xml" />
@@ -48,7 +50,7 @@ const seoImage = generateAbsoluteUrl(image.src);
   <script is:inline>
     // Prevent FOUC by applying theme before page renders
     (function() {
-      const theme = localStorage.getItem('theme') || 
+      const theme = localStorage.getItem('theme') ||
         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       if (theme === 'dark') {
         document.documentElement.classList.add('dark');

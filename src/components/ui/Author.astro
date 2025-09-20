@@ -7,13 +7,17 @@ interface Props extends AuthorInfo {
 }
 const {avatar, name, headline, username, location, pronouns} = Astro.props;
 
-const image = await getImage({src: avatar, format: 'avif'});
+const image = await getImage({
+    src: avatar, format: 'avif', width: 184,
+    height: 184,
+    quality: 80
+});
 ---
 
 <div class="flex items-center gap-4">
     <div class="relative rounded-full shrink-0 overflow-hidden">
         <Image
-                loading="eager"
+                loading="lazy"
                 src={image.src}
                 alt={name}
                 width={92}
