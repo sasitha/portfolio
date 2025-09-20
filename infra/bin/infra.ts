@@ -10,10 +10,10 @@ const env: cdk.Environment = { account: process.env.AWS_ACCOUNT, region: process
 const app = new cdk.App();
 
 // Get configuration from environment variables with fallbacks
-const domainName = process.env.DOMAIN_NAME ;
-const certificateArn = process.env.CERTIFICATE_ARN;
-const repositoryName = process.env.REPOSITORY_NAME;
-const distributionId = process.env.DISTRIBUTION_ID;
+const domainName = process.env.DOMAIN_NAME || '' ;
+const certificateArn = process.env.CERTIFICATE_ARN || '';
+const repositoryName = process.env.REPOSITORY_NAME || '';
+const distributionId = process.env.DISTRIBUTION_ID || '';
 
 new PortfolioWebsiteStack(app, 'PortfolioWebsite', {
   stackName: 'PortfolioWebsite',
