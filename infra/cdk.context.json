@@ -1,0 +1,18 @@
+{
+  "hosted-zone:account=806124867804:domainName=sasitha.me:region=ap-southeast-1": {
+    "Id": "/hostedzone/Z0037023NZOPKZ63D1PP",
+    "Name": "sasitha.me."
+  },
+  "hosted-zone:account=806124867804:domainName=sasitha.xyz:region=ap-southeast-1": {
+    "Id": "/hostedzone/Z0705612J038V19OVWKX",
+    "Name": "sasitha.xyz."
+  },
+  "hosted-zone:account=806124867804:domainName=sasitha.me:region=ap-southeast-2": {
+    "Id": "/hostedzone/Z018688338E4TILODIWD8",
+    "Name": "sasitha.me."
+  },
+  "hosted-zone:account=806124867804:domainName=sasitha.net:region=ap-southeast-2": {
+    "Id": "/hostedzone/Z01369051Y30GFWZZL4V",
+    "Name": "sasitha.net."
+  }
+}
