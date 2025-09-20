@@ -41,6 +41,6 @@ export const DEFAULT_CONFIGURATION: DefaultConfigurationType = {
     twitter: {
       creator: '@sasitha_madush',
     },
-    robots: 'noindex, nofollow',
+    robots: 'index, follow',
   }
 };

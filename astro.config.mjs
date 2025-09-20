@@ -21,7 +21,10 @@ export default defineConfig({
     },
     integrations: [
         react(),
-        sitemap(),
+        sitemap({
+            filter: (page) => !page.includes('/infra/'),
+            lastmod: new Date(),
+        }),
         mdx({
             optimize: true,
             syntaxHighlight: 'shiki',

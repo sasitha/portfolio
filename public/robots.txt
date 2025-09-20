@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sasitha.net/sitemap-index.xml
+
